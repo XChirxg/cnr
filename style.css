@@ -55,6 +55,10 @@ header {
 /* Logo image */
 .logoimg {
     width: 60px; /* Adjust size */
+
+    pointer-events: none; /* Prevents interaction */
+    -webkit-user-drag: none; /* Disables dragging on WebKit browsers */
+    user-select: none; /* Prevents selection */
 }
 
 /* Navigation */
@@ -146,6 +150,10 @@ nav ul li a:hover {
     animation: marquee 40s linear infinite;
 
     top: -25%;
+
+    pointer-events: none; /* Prevents interaction */
+    -webkit-user-drag: none; /* Disables dragging on WebKit browsers */
+    user-select: none; /* Prevents selection */
 }
 @keyframes marquee {
     from { transform: translateX(-10%); }
@@ -162,6 +170,10 @@ nav ul li a:hover {
     animation: marquee2 40s linear infinite;
     
     top: -25%;
+
+    pointer-events: none; /* Prevents interaction */
+    -webkit-user-drag: none; /* Disables dragging on WebKit browsers */
+    user-select: none; /* Prevents selection */
 }
 @keyframes marquee2 {
     from { transform: translateX(90%); }
@@ -178,13 +190,17 @@ nav ul li a:hover {
     height: auto;
     transform: translate(0%, 0%);
     z-index: 1;
+    
+    pointer-events: none; /* Prevents interaction */
+    -webkit-user-drag: none; /* Disables dragging on WebKit browsers */
+    user-select: none; /* Prevents selection */
 }
 
 @media (max-width: 768px) {
     .profile img {
-        width: 150%;
+        width: 130%;
         height: auto;
-        transform: translate(-18%, 0%);
+        transform: translate(-13%, 0%);
         z-index: 1;
     }
 }
@@ -220,6 +236,9 @@ h2 {
     width: 50px;
     margin: 10px;
     height: auto;
+    pointer-events: none; /* Prevents interaction */
+    -webkit-user-drag: none; /* Disables dragging on WebKit browsers */
+    user-select: none; /* Prevents selection */
 }
 
 @media (max-width: 768px) {
@@ -240,9 +259,8 @@ h2 {
 
 
 
-/* Services Section */
 .services {
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
     padding: 100px;
     text-align: center;
@@ -255,6 +273,23 @@ h2 {
     color: rgb(0, 0, 0);
     font-family: 'pop';
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+.service-box img {
+    max-width: 100%;  /* Ensures the image doesn't exceed the box width */
+    height: auto;      /* Maintains the aspect ratio */
+    object-fit: contain; /* Ensures the image fits within the box without being cropped */
+    margin-top: 10px;
+
+    pointer-events: none; /* Prevents interaction */
+    -webkit-user-drag: none; /* Disables dragging on WebKit browsers */
+    user-select: none; /* Prevents selection */
 }
 
 @media (max-width: 768px) {
@@ -262,7 +297,16 @@ h2 {
         display: block;
         padding: 10px;
     }
+    
+    .service-box {
+        margin: 10px auto;
+    }
+    
+    .service-box img {
+        width: 100%; /* Make sure images resize properly on smaller screens */
+    }
 }
+
 
 
 
@@ -361,3 +405,59 @@ h2 {
     border: none;
     cursor: pointer;
 }
+
+
+.contact {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact-btn3 {
+    padding: 10px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-btn3:hover {
+    background-color: gold;
+    border-radius: 50%;
+}
+
+/* Floating Contact Button */
+.floating-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f4501e00;
+    text-decoration: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;  /* Adjust button size */
+    height: 60px; /* Adjust button size */
+}
+@media screen and (max-width: 768px) {
+    .floating-contact {
+        bottom: -5px;
+        right: -5px;
+        box-shadow: none;
+    }
+    
+}
+
+/* Contact Icon Image */
+.contact-icon {
+    width: 40px; /* Adjust image size */
+    height: 40px; /* Adjust image size */
+    object-fit: contain; /* Ensures proper scaling */
+}
+
+.floating-contact:hover {
+    background-color: #e64a19;
+    border-radius: 50%;
+}
+
