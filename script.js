@@ -69,3 +69,13 @@ reviews.forEach(review => {
     `;
     mobileReviews.appendChild(reviewEntry);
 });
+
+// Open Logo in Fullscreen
+function openLogo() {
+    document.getElementById("logoOverlay").style.display = "flex";
+}
+
+// Close Fullscreen Logo
+function closeLogo() {
+    document.getElementById("logoOverlay").style.display = "none";
+}

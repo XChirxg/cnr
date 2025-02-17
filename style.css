@@ -38,6 +38,12 @@ header {
     color: rgb(0, 0, 0);
 }
 
+
+
+
+
+
+
 /* Logo container */
 .logo-container {
     display: flex;
@@ -52,14 +58,77 @@ header {
     font-family: 'szty';
 }
 
-/* Logo image */
-.logoimg {
-    width: 60px; /* Adjust size */
-
-    pointer-events: none; /* Prevents interaction */
-    -webkit-user-drag: none; /* Disables dragging on WebKit browsers */
-    user-select: none; /* Prevents selection */
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
+
+.logoimg {
+    width: 60px; 
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-container:hover .logoimg {
+    transform: scale(1.1); /* Slight hover effect */
+}
+
+/* Fullscreen Logo Overlay */
+.logo-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo-full {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: zoomIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+/* Keyframe Animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+
 
 /* Navigation */
 nav ul {

@@ -11,10 +11,18 @@
 
     <!-- Navigation Bar -->
     <header>
-        <div class="logo-container">
-            <img class="logoimg" src="assets/logos/cnr2.png" alt="profile">
-            <div class="logotext">Chinurag</div>
-        </div>
+<!-- Logo Container -->
+<div class="logo-container" onclick="openLogo()">
+    <img class="logoimg" src="assets/logos/cnr2.png" alt="profile">
+    <div class="logotext">Chinurag</div>
+</div>
+
+<!-- Fullscreen Logo View -->
+<div id="logoOverlay" class="logo-overlay">
+    <span class="close-btn" onclick="closeLogo()">&times;</span>
+    <img src="assets/logos/cnr2.png" class="logo-full" alt="profile">
+</div>
+
         <nav>
             <ul>
                 <li><a href="https://www.google.com/search?q=chinurag&oq=chinurag&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIMCAEQLhgNGLEDGIAEMgkIAhAAGA0YgAQyCQgDEAAYDRiABDIGCAQQRRg9MgYIBRBFGDwyBggGEEUYPTIGCAcQRRg80gEIMjI1MGowajeoAgiwAgE&sourceid=chrome&ie=UTF-8">About</a></li>
