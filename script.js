@@ -8,6 +8,9 @@ document.querySelector(".contact-btn").addEventListener("click", function() {
 document.querySelector(".contact-btn2").addEventListener("click", function() {
     window.location.href = "mailto:chinurag@gmail.com?subject=Interested%20in%20Your%20Services&body=Hello,%0D%0A%0D%0AI%20visited%20your%20page%20and%20I%20am%20interested%20in%20discussing%20further%20about%20the%20design.%0D%0A%0D%0AThank%20you!";
 });
+document.querySelector(".contact-btn3").addEventListener("click", function() {
+    window.location.href = "mailto:chinurag@gmail.com?subject=Interested%20in%20Your%20Services&body=Hello,%0D%0A%0D%0AI%20visited%20your%20page%20and%20I%20am%20interested%20in%20discussing%20further%20about%20the%20design.%0D%0A%0D%0AThank%20you!";
+});
 
 
 
