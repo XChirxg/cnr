@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chirag Sharma - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: #FF4444;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 60px;
+            padding: 0 40px 80px 40px;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-content .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .contact-item i {
+            color: #FF4444;
+            font-size: 18px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #FF4444;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #f5f5f5;
+            color: #1a1a1a;
+        }
+
+        section {
+            padding: 80px 40px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .education-grid,
+        .experience-grid {
+            display: grid;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fafafa;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .card-date {
+            color: #FF4444;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .card-description {
+            color: #444;
+            font-size: 15px;
+        }
+
+        .card-description ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .card-description li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .card-description li:before {
+            content: "•";
+            color: #FF4444;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        .skills-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            gap: 25px;
+        }
+
+        .skill-category {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #f5f5f5;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #1a1a1a;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: #fafafa;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .project-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            color: #FF4444;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        footer p {
+            font-size: 15px;
+        }
+
+        @media (max-width: 968px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-image {
+                order: -1;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .skill-category {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            nav {
+                padding: 20px;
+            }
+
+            .hero {
+                padding: 0 20px 60px 20px;
+            }
+
+            .card-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">CHIRAG SHARMA</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero" id="about">
+            <img src="chirag.gif" alt="Chirag Sharma" class="hero-image">
+            <div class="hero-content">
+                <h1>Chirag Sharma</h1>
+                <p class="subtitle">I enjoy creating digital projects, analyzing data, and blending creativity with design and development to make ideas more useful and engaging.</p>
+                
+                <div class="contact-info">
+                    <a href="mailto:chiragsharma17402@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>chiragsharma17402@gmail.com</span>
+                    </a>
+                    <a href="tel:+918988088798" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 89880 88798</span>
+                    </a>
+                    <a href="#" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Get in Touch
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <i class="fas fa-briefcase"></i>
+                        View Work
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">UGC NET Assistant Professor</h3>
+                            <p class="card-subtitle">Qualified</p>
+                        </div>
+                        <span class="card-date">July 2025</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">M.Com. in Finance</h3>
+                            <p class="card-subtitle">Himachal Pradesh University</p>
+                        </div>
+                        <span class="card-date">July 2022 – July 2024</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">B.Com.</h3>
+                            <p class="card-subtitle">Himachal Pradesh University</p>
+                        </div>
+                        <span class="card-date">July 2019 – Sep 2022</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <div class="skill-label">Programming</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-label">Tools & Libraries</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Blender</span>
+                        <span class="skill-tag">Adobe Animate</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Firebase</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-label">Data Visualization</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">PowerPoint</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-label">Google Workspace</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Sheets</span>
+                        <span class="skill-tag">Docs</span>
+                        <span class="skill-tag">Gmail</span>
+                        <span class="skill-tag">Chrome</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-label">Core Concepts</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Collecting</span>
+                        <span class="skill-tag">Statistical Analysis</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-label">Professional</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Problem-solving</span>
+                        <span class="skill-tag">Critical Thinking</span>
+                        <span class="skill-tag">Vibe Coding</span>
+                        <span class="skill-tag">Content Creation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">YouTube Channel</h3>
+                            <p class="card-subtitle">Chinurag</p>
+                        </div>
+                        <span class="card-date">Jul 2017 – Dec 2020</span>
+                    </div>
+                    <div class="card-description">
+                        <ul>
+                            <li>I used to write stories and animate them.</li>
+                            <li>It has 20k subscribers.</li>
+                            <li>Also Created some other youtube channels - Thinking Chinurag (25K), Hard route (Short Films) (2.5K)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3 class="card-title">Front End Developer</h3>
+                            <p class="card-subtitle">Freelance</p>
+                        </div>
+                        <span class="card-date">Jan 2024 – Present</span>
+                    </div>
+                    <div class="card-description">
+                        <ul>
+                            <li>Ambar - Social media and connection building app prototype</li>
+                            <li>Zi cafe - Website for cafe management and home delivery</li>
+                            <li>Journey loom - Travel agency website</li>
+                            <li>A Brain Thread - Free AI learning visualizer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Ambar</h3>
+                    <p>Social media and connection building app prototype</p>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Zi Cafe</h3>
+                    <p>Website for cafe management and home delivery</p>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Journey Loom</h3>
+                    <p>Travel agency website</p>
+                    <a href="http://journeyloom.in" class="project-link">journeyloom.in <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <h3>A Brain Thread</h3>
+                    <p>Free AI learning visualizer</p>
+                    <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Consumer Behavior Research</h3>
+                    <p>Effects of digital payments on consumer behavior</p>
+                    <a href="#" class="project-link">View Research <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Get in Touch</h2>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="color: #666; margin-bottom: 30px; font-size: 16px;">I'm always interested in hearing about new projects and opportunities.</p>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="mailto:chiragsharma17402@gmail.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Email Me
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fab fa-linkedin"></i>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Chirag Sharma. All rights reserved.</p>
+    </footer>
+</body>
+</html>
